@@ -15,6 +15,7 @@ Beginn der Bearbeitung der Aufgabe 2:
 Ende der Bearbeitung:
 17.12.2020
 11:08
+edited 11:27 (Kommentare)
 Florian Ewald
 """
 def terminate(err):
@@ -80,7 +81,15 @@ def sum_possible_memo_aux(l, i, s, m):
         for o in l[:i+1]:
             m[(i,o)] = [o]
             if o == s:
+                # auch möglich, dauert aber besimmt etwas länger
+                """
                 return m[(i,s)]
+                """
+                # Beschleunigung der Berechnung wenn [o] zurückgegeben wird anstatt auf das dictionary zuzugreifen. Zugriff benötigt Zeit.
+                # Bei Zugriff auf innere Listen / Tupel habe ich bereits bei der Analyse von Abaqus .odb Files Erfahrungen gemacht. 
+                # Das Auslesen geht deutlich schneller, wenn ncht ständig auf innere Listen zugegriffen werden muss sondern die innere Liste in einer Variablen gespeicher wird.
+                # Ähnlich ist es hier
+                return [o]
         
         lcopy = l[:i+1]
         for o in range(len(l[:i+1])):
@@ -91,7 +100,9 @@ def sum_possible_memo_aux(l, i, s, m):
                     len_res = len(res)
                     m[(len(res)+1, sum(res))] = res[:]
                     if (type(res) == list):
-                        return m[(len_res+1, s)]
+                        # return m[(len_res+1, s)]
+                        return res[:]
+                        # Warum res zurückgegeben wird ist von Zeile 83 bis 90 erklärt. Vermutlich Beschleunigung der Berechnung
 
         return None
 
