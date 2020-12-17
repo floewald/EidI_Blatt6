@@ -74,16 +74,21 @@ def extended_solveRecursive(i,j,dictionary):
 
     Ende der Bearbeitung:
     17.12.2020
-    
+    11:37
     Florian Ewald
+    Lediglich Einfügen des Dictionary für den nicht trivialen Fall i != j und j != i+1: (1)
+    sowie die Rückgabe falls dein Ast bereits im Dictionary gelandet ist. (2)
     """
     if (i, j) in dictionary.keys():
-        return dictionary[(i,j)]
+        return dictionary[(i,j)] # (2)
     if i==j:
-        # dictionary[(i,j)] = emptytree
+        # dictionary[(i,j)] = emptytree 
+        # auskommentiert, da dieser Fall leicht zu ermitteln ist und sonst nur Speicherplatz und Zeit kostet, wenn der Eintrag im Dctionary erstellt wird
         return emptytree
     if j==i+1:
         # dictionary[(i,j)] = (emptytree,i,emptytree)
+        # siehe Zeile 86
+        # Wie bei i == j....
         return (emptytree,i,emptytree)
     else:
         tree = (emptytree,i,solveRecursive(i+1,j))
@@ -92,7 +97,7 @@ def extended_solveRecursive(i,j,dictionary):
             right = solveRecursive(k+1,j)
             if gg((left,k,right)) < gg(tree):
                 tree = (left,k,right)
-        dictionary[(i,j)] = tree
+        dictionary[(i,j)] = tree # (1)
         return tree
 
 
