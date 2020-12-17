@@ -5,8 +5,9 @@ import random
 import timeit
 
 """
-Achtung folgendr Code ist aus MEINER Aufgabe 1 Blatt 5
+Achtung folgender Code ist aus MEINER Aufgabe 1 Blatt 5
 Dies ist trotz des Vorwurfs als Plagiat selbst erstellt worden.
+Aufgabe 1 von Blatt 5 ist KEIN Plagiat.
 Beginn der Bearbeitung der Aufgabe 2:
 17.12.2020
 10:22 Uhr
