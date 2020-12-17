@@ -68,6 +68,7 @@ def solveDP():
 def extended_solveRecursive(i,j,dictionary):
     """
     Achtung folgender Code ist von mir, Florian Ewald (333 068 94, 08.1995) erstellt worden.
+    Die Grundlegende Funktion und deren Code wurde von der von Ihnen bereitgestellten Funktion 'solveRecursive', Zeile 32 -44 kopiert und lediglich um das Dictionary erweitert.
     Beginn der Bearbeitung der Aufgabe 1:
     17.12.2020
     11:16 Uhr
